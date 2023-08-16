@@ -4,7 +4,7 @@ import { Contact } from "./entity/Contact"
 
 export const AppDataSource = new DataSource({
     type: "mysql",
-    host: "localhost",
+    host: "https://frang-backend-g5v2-dev.fl0.io/",
     port: 3306,
     username: "root",
     password: "Password123!",
