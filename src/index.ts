@@ -7,6 +7,7 @@ import routes from "./routes";
 import https from 'https';
 import http from 'http';
 import fs from 'fs';
+import path from 'path';
 
 const PORT = process.env.PORT || 3000;
 
@@ -20,10 +21,14 @@ AppDataSource.initialize()
     app.use(helmet());
     app.use("/", routes);
 
+    // Obtener las rutas absolutas a los archivos de clave privada y certificado
+    const privateKeyPath = path.join(__dirname, 'path', 'to', 'private-key.pem');
+    const certificatePath = path.join(__dirname, 'path', 'to', 'certificate.pem');
+
     // Configurar opciones para el certificado SSL
     const sslOptions = {
-      key: fs.readFileSync('path/to/private-key.pem'),
-      cert: fs.readFileSync('path/to/certificate.pem')
+      key: fs.readFileSync(privateKeyPath),
+      cert: fs.readFileSync(certificatePath)
     };
 
     // Crear un servidor HTTPS con certificado SSL
