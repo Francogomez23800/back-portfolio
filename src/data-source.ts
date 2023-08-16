@@ -5,7 +5,7 @@ import { Contact } from "./entity/Contact"
 export const AppDataSource = new DataSource({
     type: "mysql",
     host: "localhost",
-    port: 3306,
+    port: 3000,
     username: "root",
     password: "Password123!",
     database: "Portfolio",
