@@ -26,7 +26,7 @@ export class ContactController {
    
   };
 
-  static hola = ( request: Request,
+  static hola = ( _request: Request,
     response: Response) =>{
         response.status(200).json({text:'prueba'})
     }
