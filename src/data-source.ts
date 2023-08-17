@@ -3,7 +3,7 @@ import { DataSource } from "typeorm"
 import { Contact } from "./entity/Contact"
 
 export const AppDataSource = new DataSource({
-    type: "mysql",
+    type: "postgres",
     host: "ep-rapid-lake-90709426.us-east-2.aws.neon.tech",
     port: 5432,
     username: "fl0user",
@@ -14,5 +14,7 @@ export const AppDataSource = new DataSource({
     entities: [Contact],
     migrations: [],
     subscribers: [],
-    ssl:require
+    extra:{
+        ssl:true
+    }
 })
