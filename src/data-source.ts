@@ -8,7 +8,7 @@ export const AppDataSource = new DataSource({
     port: 5432,
     username: "fl0user",
     password: "Jg6XlqKOP5bz",
-    database: "Portfolio",
+    database: "frang-database",
     synchronize: true,
     logging: false,
     entities: [Contact],
